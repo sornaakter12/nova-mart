@@ -1,0 +1,78 @@
+{
+  "entities": {
+    "Product": {
+      "title": "Product",
+      "description": "E-commerce store item available for purchase",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "maxLength": 200, "description": "Product display name" },
+        "description": { "type": "string", "maxLength": 3000, "description": "Detailed product description" },
+        "price": { "type": "number", "description": "Current selling price" },
+        "originalPrice": { "type": "number", "description": "Original retail price before discount" },
+        "category": { "type": "string", "maxLength": 100, "description": "Category classification" },
+        "image": { "type": "string", "maxLength": 1000, "description": "URL of the product image" },
+        "stock": { "type": "number", "description": "Available inventory units" },
+        "rating": { "type": "number", "description": "Average customer review score" },
+        "isFeatured": { "type": "boolean", "description": "Promoted on homepage showcase" },
+        "createdAt": { "type": "string", "description": "ISO timestamp of creation" },
+        "updatedAt": { "type": "string", "description": "ISO timestamp of last update" }
+      },
+      "required": ["title", "price", "category", "stock"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "Customer purchase transaction record",
+      "type": "object",
+      "properties": {
+        "orderNumber": { "type": "string", "maxLength": 64, "description": "Unique readable tracking order code" },
+        "customerEmail": { "type": "string", "maxLength": 256, "description": "Customer contact email" },
+        "customerName": { "type": "string", "maxLength": 200, "description": "Recipient full name" },
+        "customerPhone": { "type": "string", "maxLength": 50, "description": "Recipient contact phone number" },
+        "shippingAddress": { "type": "string", "maxLength": 500, "description": "Delivery address destination" },
+        "subtotal": { "type": "number", "description": "Items total before discounts" },
+        "discount": { "type": "number", "description": "Discount deduction applied" },
+        "deliveryFee": { "type": "number", "description": "Shipping fee added" },
+        "total": { "type": "number", "description": "Final payable amount" },
+        "paymentMethod": { "type": "string", "enum": ["cash_on_delivery", "online_payment"], "description": "Payment approach" },
+        "paymentStatus": { "type": "string", "enum": ["pending", "paid", "refunded"], "description": "Payment resolution state" },
+        "orderStatus": { "type": "string", "enum": ["pending", "processing", "shipped", "delivered", "cancelled"], "description": "Fulfillment status" },
+        "userId": { "type": "string", "maxLength": 128, "description": "Associated user account UID or guest marker" },
+        "notes": { "type": "string", "maxLength": 500, "description": "Customer or delivery notes" },
+        "createdAt": { "type": "string", "description": "Creation timestamp" }
+      },
+      "required": ["orderNumber", "customerName", "customerPhone", "shippingAddress", "total", "orderStatus", "paymentMethod"]
+    },
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User customer account record",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string", "maxLength": 256, "description": "User account email" },
+        "name": { "type": "string", "maxLength": 200, "description": "Full display name" },
+        "phone": { "type": "string", "maxLength": 50, "description": "Primary phone" },
+        "address": { "type": "string", "maxLength": 500, "description": "Default shipping address" },
+        "role": { "type": "string", "enum": ["customer", "admin"], "description": "Access control tier" },
+        "createdAt": { "type": "string", "description": "Account registration timestamp" }
+      },
+      "required": ["email", "role"]
+    }
+  },
+  "firestore": {
+    "/products/{productId}": {
+      "schema": { "$ref": "#/entities/Product" },
+      "description": "Public catalog of products browsable by all, managed by admins"
+    },
+    "/orders/{orderId}": {
+      "schema": { "$ref": "#/entities/Order" },
+      "description": "Customer orders visible to author or admins, state updated by admins"
+    },
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/UserProfile" },
+      "description": "User profile with private customer address and order associations"
+    },
+    "/admins/{adminUid}": {
+      "schema": { "$ref": "#/entities/UserProfile" },
+      "description": "Trusted admin whitelist records"
+    }
+  }
+}

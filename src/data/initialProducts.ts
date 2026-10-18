@@ -1,0 +1,170 @@
+import { Product } from '../types';
+
+export const INITIAL_PRODUCTS: Product[] = [
+  {
+    id: 'prod-1',
+    title: 'Wireless Active Noise-Cancelling Headphones Pro',
+    description: 'Immersive sound with high-resolution audio drivers, 40-hour battery life, ergonomic memory foam earcups, and crystal-clear voice microphones.',
+    price: 3499,
+    originalPrice: 4999,
+    category: 'Electronics',
+    image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&auto=format&fit=crop&q=80',
+    stock: 24,
+    rating: 4.8,
+    reviewsCount: 142,
+    isFeatured: true,
+    tags: ['Best Seller', 'Wireless', 'Audio'],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'prod-2',
+    title: 'Ultra-Thin Smart Watch Series 8 (Amoled Display)',
+    description: 'Comprehensive health monitoring with SpO2, real-time heart rate sensor, GPS workout tracking, sleep analysis, and water resistance up to 50m.',
+    price: 2799,
+    originalPrice: 3800,
+    category: 'Gadgets & Accessories',
+    image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&auto=format&fit=crop&q=80',
+    stock: 18,
+    rating: 4.7,
+    reviewsCount: 98,
+    isFeatured: true,
+    tags: ['Waterproof', 'Fitness', 'Smart'],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'prod-3',
+    title: 'Ergonomic Mechanical Gaming Keyboard RGB',
+    description: 'Hot-swappable tactile switches, aircraft-grade aluminum top frame, sound-dampening foam, per-key RGB backlighting, and braided USB-C cable.',
+    price: 2150,
+    originalPrice: 2800,
+    category: 'Electronics',
+    image: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=800&auto=format&fit=crop&q=80',
+    stock: 15,
+    rating: 4.9,
+    reviewsCount: 210,
+    isFeatured: true,
+    tags: ['Gaming', 'RGB', 'Mechanical'],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'prod-4',
+    title: 'Minimalist Waterproof Urban Backpack (25L)',
+    description: 'Weatherproof ballistic nylon shell, dedicated padded 16-inch laptop compartment, hidden anti-theft passport pocket, and breathable back panel.',
+    price: 1850,
+    originalPrice: 2450,
+    category: 'Fashion & Apparel',
+    image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&auto=format&fit=crop&q=80',
+    stock: 32,
+    rating: 4.6,
+    reviewsCount: 84,
+    isFeatured: false,
+    tags: ['Travel', 'Waterproof', 'Laptop'],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'prod-5',
+    title: 'Premium Cold Brew Coffee Maker & Carafe 1.5L',
+    description: 'Borosilicate glass pitcher with dual-mesh stainless steel filter, airtight silicon gasket lid, ideal for smooth, low-acid cold brew or iced tea.',
+    price: 1250,
+    originalPrice: 1700,
+    category: 'Home & Living',
+    image: 'https://images.unsplash.com/photo-1517256064527-09c73fc73e38?w=800&auto=format&fit=crop&q=80',
+    stock: 12,
+    rating: 4.8,
+    reviewsCount: 67,
+    isFeatured: true,
+    tags: ['Kitchen', 'Coffee', 'Glass'],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'prod-6',
+    title: 'Hydrating Botanical Facial Cleanser & Serum Kit',
+    description: 'Formulated with organic aloe, niacinamide, hyaluronic acid, and vitamin C. Dermatologically tested for sensitive, dry, and combination skin.',
+    price: 1550,
+    originalPrice: 2100,
+    category: 'Health & Beauty',
+    image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=800&auto=format&fit=crop&q=80',
+    stock: 45,
+    rating: 4.9,
+    reviewsCount: 178,
+    isFeatured: false,
+    tags: ['Skincare', 'Organic', 'Serum'],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'prod-7',
+    title: 'Handcrafted Premium Leather Bi-Fold Wallet',
+    description: '100% genuine top-grain cowhide leather, RFID blocking technology to protect card data, 8 card slots, dual cash compartment, slim profile.',
+    price: 990,
+    originalPrice: 1400,
+    category: 'Fashion & Apparel',
+    image: 'https://images.unsplash.com/photo-1627123424574-724758594e93?w=800&auto=format&fit=crop&q=80',
+    stock: 50,
+    rating: 4.7,
+    reviewsCount: 112,
+    isFeatured: false,
+    tags: ['Leather', 'RFID', 'Accessories'],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'prod-8',
+    title: 'Fast Wireless Magnetic Charging Stand 3-in-1',
+    description: 'Simultaneously powers your smartphone, wireless earbuds, and smartwatch with intelligent heat control and 15W Qi-certified high-speed charging.',
+    price: 2200,
+    originalPrice: 2950,
+    category: 'Gadgets & Accessories',
+    image: 'https://images.unsplash.com/photo-1622445262464-84b1456045b6?w=800&auto=format&fit=crop&q=80',
+    stock: 20,
+    rating: 4.6,
+    reviewsCount: 75,
+    isFeatured: true,
+    tags: ['Charging', 'MagSafe', 'Fast'],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'prod-9',
+    title: 'Organic Raw Sundarban Honey (500g)',
+    description: '100% unprocessed, natural forest honey collected sustainably from the mangrove forests. Packed with enzymes, antioxidants, and authentic rich aroma.',
+    price: 850,
+    originalPrice: 1100,
+    category: 'Groceries & Foods',
+    image: 'https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=800&auto=format&fit=crop&q=80',
+    stock: 35,
+    rating: 4.9,
+    reviewsCount: 310,
+    isFeatured: true,
+    tags: ['Pure', 'Organic', 'Honey'],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'prod-10',
+    title: 'Aroma Diffuser Ultrasonic Essential Oil Humidifier',
+    description: '500ml capacity with 7-color soothing LED ambient lighting, whisper-quiet operation (<25dB), timer setting, and auto waterless shut-off protection.',
+    price: 1450,
+    originalPrice: 1950,
+    category: 'Home & Living',
+    image: 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800&auto=format&fit=crop&q=80',
+    stock: 22,
+    rating: 4.7,
+    reviewsCount: 93,
+    isFeatured: false,
+    tags: ['Home', 'Aroma', 'Relaxation'],
+    createdAt: new Date().toISOString()
+  }
+];
+
+export const CATEGORIES = [
+  'All',
+  'Electronics',
+  'Fashion & Apparel',
+  'Home & Living',
+  'Health & Beauty',
+  'Groceries & Foods',
+  'Gadgets & Accessories'
+];
+
+export const PROMO_CODES = [
+  { code: 'WELCOME10', discountPercent: 10, description: '10% OFF for new customers' },
+  { code: 'SUPER15', discountPercent: 15, minSpend: 3000, description: '15% OFF on orders over ৳3,000 / $30' },
+  { code: 'EID2026', discountPercent: 20, minSpend: 5000, description: '20% OFF festive celebration savings' }
+];

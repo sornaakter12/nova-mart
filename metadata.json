@@ -1,0 +1,8 @@
+{
+  "name": "NovaMart - Modern E-Commerce Store & Admin Portal",
+  "description": "Full-stack single-page e-commerce storefront and admin dashboard with shopping cart, product catalog, Cash on Delivery checkout, order management, and ready-to-connect Firebase & Vercel deployment.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
